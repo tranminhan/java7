@@ -9,17 +9,18 @@ import org.antran.java.annotation.test.TestInfo.Priority;
         tags = { "dev", "new" })
 public class ASmallTest {
 
-    public void test1() {
-        throw new RuntimeException();
+    @TestCase
+    public void testPassed() {
+        System.out.println("Passed");
     }
 
     @TestCase(enable = false)
-    public void test2() {
+    public void testDisabled() {
         throw new RuntimeException();
     }
 
     @TestCase(enable = true)
-    public void test3() {
+    public void testFailed() {
         throw new RuntimeException();
     }
 }
